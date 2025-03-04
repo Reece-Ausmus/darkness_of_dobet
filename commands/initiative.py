@@ -46,10 +46,17 @@ def format_initiative_data(data):
     for character in sorted_data:
         rolls = ', '.join(map(str, character['rolls']))
         advantage_text = 'with advantage' if character['initiative_ad'] == 1 else 'with disadvantage' if character['initiative_ad'] == -1 else ''
-        name_chunk = f"{character['name']}: {character['initiative_roll']}"
-        rolled_chunk = f"[Rolled: {rolls}] {advantage_text}"
-        bonus_chunk = f"(Bonus: +{character['initiative']})"
-        formatted_data += name_chunk + " "*(21-len(name_chunk))
+        name_chunk = f"{character['name']}: "
+        initiative_chunk = f"{character['initiative_roll']}"
+        rolled_chunk = f"Rolled: ["
+        if character['initiative_ad'] != 0:
+            rolled_chunk += f"({rolls})"
+        else:
+            rolled_chunk += rolls
+        rolled_chunk += f"] {advantage_text}"
+        bonus_chunk = f"Bonus: (+{character['initiative']})"
+        formatted_data += name_chunk + " "*(14-len(name_chunk))
+        formatted_data += initiative_chunk + " "*(7-len(initiative_chunk))
         formatted_data += rolled_chunk + " "*(38-len(rolled_chunk))
         formatted_data += bonus_chunk + "\n"
     formatted_data += "```"

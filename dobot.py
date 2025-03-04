@@ -19,9 +19,10 @@ GUILD = os.getenv('GUILD')
 
 if args.debug:
     print("Debug mode enabled.")
-    ROLL_CHANNEL_ID = int(os.getenv('DEBUG_CHANNEL_ID'))
-    SPELL_CHANNEL_ID = int(os.getenv('DEBUG_CHANNEL_ID'))
-    INITIATIVE_CHANNEL_ID = int(os.getenv('DEBUG_CHANNEL_ID'))
+    DEBUG_CHANNEL_ID = int(os.getenv('DEBUG_CHANNEL_ID'))
+    ROLL_CHANNEL_ID = DEBUG_CHANNEL_ID
+    SPELL_CHANNEL_ID = DEBUG_CHANNEL_ID
+    INITIATIVE_CHANNEL_ID = DEBUG_CHANNEL_ID
 else:
     ROLL_CHANNEL_ID = int(os.getenv('ROLL_CHANNEL_ID'))
     SPELL_CHANNEL_ID = int(os.getenv('SPELL_CHANNEL_ID'))

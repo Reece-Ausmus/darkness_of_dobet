@@ -1,0 +1,31 @@
+.menu-bar {
+  background-color: #333;
+  padding: 10px;
+  position: sticky; /* Keeps it at the top */
+  top: 0; /* Keeps it at the top of the page */
+  width: 100%; /* Makes it span the entire width of the page */
+  z-index: 1000; /* Ensures it stays on top of other content */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Adds a shadow for visibility */
+}
+
+.menu-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-around;
+}
+
+.menu-list li {
+  display: inline;
+}
+
+.menu-list li a {
+  color: white;
+  text-decoration: none;
+  padding: 10px 15px;
+}
+
+.menu-list li a:hover {
+  background-color: #575757;
+}

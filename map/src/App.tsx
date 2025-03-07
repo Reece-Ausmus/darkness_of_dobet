@@ -1,11 +1,12 @@
 import React from "react";
-import "./App.css";
+import { BrowserRouter as Router } from "react-router-dom";
+import MenuBar from "./Components/MenuBar";
 
 const App: React.FC = () => {
   return (
-    <div className="App">
-      <h1>map</h1>
-    </div>
+    <Router>
+      <MenuBar />
+    </Router>
   );
 };
 

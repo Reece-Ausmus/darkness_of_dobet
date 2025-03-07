@@ -1,34 +1,7 @@
-/* Chessboard container */
-.chessboard {
-  display: grid;
-  grid-template-rows: repeat(8, 80px);
-  grid-template-columns: repeat(8, 80px);
-  border: 2px solid black;
-}
-
-/* Each row in the chessboard */
-.row {
-  display: contents; /* Ensures grid layout works across rows */
-}
-
-/* Chess squares */
-.cell {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 32px;
-}
-
-/* Light and dark squares */
-.light {
-  background-color: #f0d9b5; /* Light square color */
-}
-
-.dark {
-  background-color: #b58863; /* Dark square color */
-}
-
-/* King piece style */
-.piece {
-  cursor: pointer;
+#root {
+  text-align: left;
+  margin-left: 80px;
+  margin-right: 80px;
+  margin-top: 60px;
+  margin-bottom: 60px;
 }

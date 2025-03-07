@@ -1,7 +1,7 @@
 import sqlite3
 
 def connect_db():
-    conn = sqlite3.connect('char_sheets.db')
+    conn = sqlite3.connect('../data/char_sheets.db')
     cursor = conn.cursor()
     return conn, cursor
 

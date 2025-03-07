@@ -1,7 +1,11 @@
 import vtk
+from pathlib import Path
+
+parent_dir = Path(__file__).parent.parent
+file_path = parent_dir / "dobot/dobot_pic.png"
 
 reader = vtk.vtkPNGReader()
-reader.SetFileName("dobot_pic.png")
+reader.SetFileName(file_path)
 reader.Update()
 
 texture = vtk.vtkTexture()

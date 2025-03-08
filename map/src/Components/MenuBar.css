@@ -17,11 +17,28 @@
   text-decoration: none;
   display: inline-block;
   font-size: 20px;
-  margin: 4px 2px;
+  margin: 4px 4px;
   cursor: pointer;
 }
 
 .new-map-button:hover {
+  background-color: #555;
+}
+
+.open-map-button {
+  background-color: #00f;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  margin: 4px 4px;
+  cursor: pointer;
+}
+
+.open-map-button:hover {
   background-color: #555;
 }
 

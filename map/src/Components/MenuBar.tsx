@@ -1,13 +1,51 @@
-import "./MenuBar.css"; // Importing CSS for styling
+import "./MenuBar.css";
 import React, { useState } from "react";
 
-const MenuBar: React.FC = () => {
+type MenuBarProps = {
+  setMap: React.Dispatch<React.SetStateAction<number[][][]>>;
+};
+
+const MenuBar: React.FC<MenuBarProps> = ({ setMap }) => {
   const [showPopup, setShowPopup] = useState(false);
   const [width, setWidth] = useState("");
   const [height, setHeight] = useState("");
 
   const handleNewMapClick = () => {
     setShowPopup(!showPopup);
+  };
+
+  const handleOpenMapClick = () => {
+    const fileInput = document.createElement("input");
+    fileInput.type = "file";
+    fileInput.accept = ".json";
+
+    fileInput.onchange = (event: any) => {
+      const file = event.target.files[0];
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = (e) => {
+          const content = e.target?.result;
+          try {
+            // Parse the content from the file
+            const data = JSON.parse(content as string);
+
+            // Check if the map is in the correct structure
+            if (Array.isArray(data?.map)) {
+              // Set the map state
+              setMap(data.map);
+              console.log("Map loaded successfully:", data.map);
+            } else {
+              console.error("Invalid map structure");
+            }
+          } catch (error) {
+            console.error("Error reading or parsing the file", error);
+          }
+        };
+        reader.readAsText(file);
+      }
+    };
+
+    fileInput.click();
   };
 
   const handleCreateMap = () => {
@@ -55,6 +93,9 @@ const MenuBar: React.FC = () => {
           </button>
         </div>
       )}
+      <button className="open-map-button" onClick={handleOpenMapClick}>
+        Open Map
+      </button>
     </div>
   );
 };

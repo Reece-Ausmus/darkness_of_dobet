@@ -2,30 +2,70 @@
   background-color: #333;
   padding: 10px;
   position: fixed;
-  top: 0; /* Keeps it at the top of the page */
-  width: 100%; /* Makes it span the entire width of the page */
-  z-index: 1000; /* Ensures it stays on top of other content */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Adds a shadow for visibility */
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-.menu-list {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  justify-content: space-around;
-}
-
-.menu-list li {
-  display: inline;
-}
-
-.menu-list li a {
+.new-map-button {
+  background-color: #00f;
+  border: none;
   color: white;
+  padding: 15px 32px;
+  text-align: center;
   text-decoration: none;
-  padding: 10px 15px;
+  display: inline-block;
+  font-size: 20px;
+  margin: 4px 2px;
+  cursor: pointer;
 }
 
-.menu-list li a:hover {
-  background-color: #575757;
+.new-map-button:hover {
+  background-color: #555;
+}
+
+.popup label {
+  display: block;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.popup input {
+  margin-left: 10px;
+  width: 50px;
+}
+
+.create-button {
+  background-color: #0f0;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.create-button:hover {
+  background-color: #555;
+}
+
+.cancel-button {
+  background-color: #f00;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.cancel-button:hover {
+  background-color: #555;
 }
